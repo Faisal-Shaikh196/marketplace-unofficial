@@ -16,7 +16,7 @@ import type {
 import { ComponentFactory } from "./ComponentFactory";
 import { ensureMe } from "../utils/auth";
 import { canAccess, type Role } from "../utils/rbac";
-import { NavBar } from "../components/shared/NavBar";
+// import { NavBar } from "../components/shared/NavBar";
 
 export type RouterContext = { queryClient: QueryClient };
 
@@ -24,8 +24,8 @@ export const RootRoute = createRootRouteWithContext<RouterContext>()({
   component: function Root() {
     return (
       <div style={{ fontFamily: "Inter, sans-serif" }}>
-        <NavBar />
-        <div style={{ padding: 16 }}>
+        {/* <NavBar /> */}
+        <div style={{}}>
           <React.Suspense fallback={<div>Loading...</div>}>
             <Outlet />
           </React.Suspense>

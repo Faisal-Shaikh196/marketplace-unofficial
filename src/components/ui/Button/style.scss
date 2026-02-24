@@ -1,0 +1,201 @@
+.react-aria-Button {
+  border: none;
+  border-radius: var(--radius-2);
+  appearance: none;
+  font-family: "Inter", sans-serif;
+  width: 100%;
+  color: var(--text-neutral-oninvert);
+  font-weight: 400;
+  margin: 0;
+  height: auto;
+  padding: 6px 12px !important;
+  text-decoration: none;
+  background:
+    linear-gradient(
+      180deg,
+      var(--btn-primary-top) 0%,
+      var(--btn-primary-bottom) 100%
+    ),
+    var(--bg-primary-500);
+  box-shadow: var(--button-badge-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  gap: var(--spacing-1);
+  -webkit-tap-highlight-color: transparent;
+  transform: scale(1);
+  transform-origin: center;
+  transition:
+    transform 140ms ease,
+    box-shadow 200ms ease;
+
+  &:hover {
+    background: var(--bg-primary-700);
+    cursor: pointer;
+    transition-duration: 200ms;
+  }
+
+  &:has(> svg:only-child) {
+    // width: var(--spacing-8);
+    flex-shrink: 0;
+    padding: 0;
+    // border-radius: 9999px;
+  }
+
+  &[data-size="small"] {
+    padding: 8px 16px;
+  }
+
+  &[data-size="medium"] {
+    padding: 10px 20px;
+  }
+
+  &[data-size="large"] {
+    padding: 12px 20px;
+  }
+
+  &[data-pressed] {
+    transform: scale(0.97);
+  }
+
+  &[data-variant="success"] {
+    background: var(--border-green);
+    box-shadow: var(--badge-shadow-success);
+
+    &:hover {
+      background: var(--border-green-100);
+    }
+  }
+
+  &[data-variant="secondary"] {
+    background: var(--bg-sunken);
+    box-shadow: var(--button-badge-secondary);
+    color: var(--text-neutral-subtle);
+
+    &:hover {
+      background: var(--border-secondary-100);
+    }
+  }
+
+  &[data-variant="danger"] {
+    background: var(--border-danger);
+    box-shadow: var(--button-badge-danger);
+
+    &:hover {
+      background: var(--border-danger-100);
+    }
+  }
+
+  &[data-variant="outline"] {
+    background: transparent;
+    border: 1px solid var(--border-default);
+    box-shadow: none;
+
+    &:hover {
+      background: var(--bg-primary-700);
+    }
+  }
+
+  &[data-variant="quite"] {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+
+    &:hover {
+      background: none;
+    }
+  }
+
+  &[data-disabled] {
+    transform: scale(1);
+    background: var(--bg-grey-100);
+    color: rgba(82, 88, 102, 0.49);
+    cursor: not-allowed;
+    transform: scale(1);
+    border: 1px solid var(--border-disabled);
+    box-shadow: none;
+  }
+
+  .react-aria-ProgressBar {
+    @media (prefers-color-scheme: dark) {
+      --highlight-background: var(--gray-1600);
+    }
+  }
+
+  kbd {
+    font: var(--font-size-sm) system-ui;
+    background: var(--highlight-hover);
+    border: 0.5px solid var(--tint-500);
+    padding: 0 var(--spacing-1);
+    border-radius: var(--radius-sm);
+    margin-inline-start: var(--spacing-3);
+  }
+}
+
+// .button-base {
+//   border: none;
+//   --button-color: var(--text-oninvert);
+//   --button-background: var(--bg-primary-100);
+//   padding: 6px 12px;
+//   font-weight: 500;
+//   border-radius: 6px;
+//   --button-gradient:
+//     linear-gradient(
+//       180deg,
+//       var(--bg-primary-500) 0%,
+//       var(--bg-primary-700) 100%
+//     ),
+//     var(--bg-primary-500);
+//   --button-text: var(--text-oninvert);
+//   background: var(--bg-primary-500);
+//   color: var(--text-oninvert);
+//   box-shadow: var(--button-badge-secondary);
+//   outline: none;
+//   transform: scale(1);
+//   transform-origin: center;
+//   transition-property: background, color, box-shadow, transform;
+//   transition-duration: 200ms;
+//   will-change: transform;
+
+//   @media (prefers-color-scheme: dark) {
+//     --button-color: var(--bg-primary-500);
+//   }
+
+//   &:disabled {
+//     background: var(--bg-grey-100);
+//     font-weight: 500;
+//     color: rgba(82, 88, 102, 0.49);
+//     cursor: not-allowed;
+//     transform: scale(1);
+//     border: 1px solid var(--border-disabled);
+//     box-shadow: none;
+
+//     &:hover {
+//       cursor: not-allowed;
+//       background: var(--bg-grey-100);
+//       transform: scale(1);
+//     }
+//   }
+
+//   &:active {
+//     transform: scale(0.97);
+//     background: var(--bg-primary-500, #006acc);
+//   }
+
+//   &:hover {
+//     background: var(--bg-primary-700);
+//     cursor: pointer;
+//   }
+
+//   &:where([data-size="small"]) {
+//     padding: 8px 16px;
+//   }
+
+//   &:where([data-size="medium"]) {
+//     padding: 10px 20px;
+//   }
+//   &:where([data-size="large"]) {
+//     padding: 12px 20px;
+//   }
+// }

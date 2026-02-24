@@ -1,0 +1,140 @@
+@use "../../styles/typography.scss";
+
+.container {
+  display: flex;
+  flex-direction: row;
+
+  .left-cont {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 16px;
+    background: linear-gradient(#5258660f 50%, #006acc 200%), var(--bg-sunken);
+
+    .top {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .middle {
+      margin-top: 2rem;
+      max-width: 658px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .title {
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 44px;
+        font-style: semi-bold;
+        letter-spacing: 4%;
+        text-align: center;
+        color: var(--text-invert);
+        margin-bottom: 2rem;
+      }
+
+      .avatar-info {
+        margin-top: 16px;
+        margin-bottom: 32px;
+        h2 {
+          @include typography.label-xl;
+        }
+
+        p {
+          @include typography.label-lg;
+          text-align: center;
+          margin: 0;
+        }
+      }
+    }
+
+    .bottom {
+      p {
+        @include typography.subheading-sm;
+        color: var(--text-subtlest);
+        text-align: center;
+
+        span {
+          color: var(--text-primary-500);
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .right-cont {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: var(--bg-surface);
+
+    .theme-toggler {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+    }
+
+    .form {
+      width: 450px;
+
+      .form-title {
+        margin-bottom: 28px;
+        h2 {
+          @include typography.label-xl;
+          margin-top: 0px;
+          margin-bottom: 8px;
+        }
+
+        p {
+          @include typography.para-lg;
+          color: var(--text-neutral-subtler);
+          margin: 0;
+        }
+      }
+
+      .react-aria-Form {
+        gap: var(--space-6);
+      }
+      .btn-grp {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        // margin-top: 16px;
+
+        .google-auth {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+        }
+      }
+    }
+
+    .signup-link {
+      margin-top: 16px;
+      text-align: center;
+
+      p {
+        @include typography.subheading-xs;
+        color: var(--text-neutral-subtlest);
+        margin: 0;
+
+        span {
+          color: var(--text-neutral-invert);
+          text-decoration: underline;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

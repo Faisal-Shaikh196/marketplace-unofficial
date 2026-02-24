@@ -1,0 +1,99 @@
+@use "../../../styles/typography.scss";
+
+.react-aria-Popover.select-popover {
+  background: var(--bg-surface) !important;
+
+  .select-btn {
+    padding: 5px;
+  }
+}
+
+.react-aria-Select {
+  //     background: var(--bg-surface);
+  //   border-radius: var(--radius-5);
+  width: 100%;
+
+  .react-aria-Label {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 142.857% */
+    letter-spacing: -0.084px;
+    color: var(--text-neutral-default);
+
+    span {
+      color: var(--bg-primary-500);
+    }
+  }
+
+  .react-aria-Button {
+    background: var(--border-surface);
+    border: 1px solid var(--border-subtlest);
+    padding: var(--space-3) var(--space-7) !important;
+    box-shadow: none;
+
+    .react-aria-SelectValue[data-placeholder] {
+      @include typography.para-sm;
+      color: var(--text-neutral-subtlest);
+    }
+
+    .react-aria-SelectValue {
+      color: var(--text-neutral-subtlest);
+    }
+  }
+
+  .lucide {
+    color: var(--bg-grey-400);
+  }
+}
+
+.dropdown-listbox {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtlest);
+  padding: var(--space-6);
+  border-radius: var(--radius-5);
+
+  .dropdown-item {
+    color: var(--text-neutral-default);
+    background: var(--bg-raised); // ensures unselected items are not colored
+    box-shadow: var(--shadow-large);
+    transition:
+      transform 140ms ease,
+      box-shadow 200ms ease,
+      background 200ms ease;
+    margin-bottom: 1px;
+    padding: var(--space-4);
+    border-radius: var(--radius-3);
+    margin-bottom: var(--space-1);
+
+    &[data-focused] {
+      background: var(--border-subtlest);
+      transform: scale(1);
+      transform-origin: center;
+      color: var(--text-invert);
+    }
+
+    &[aria-disabled="true"] {
+      color: var(--text-disabled);
+      text-overflow: ellipsis;
+    }
+
+    &[aria-selected="true"] {
+      background: var(--border-surface);
+      border: 0.5px solid var(--bg-primary-500);
+      color: var(--text-neutral-default);
+      box-shadow:
+        0 0 0 1px var(--bg-surface, #fff),
+        0 0 0 2px var(--Style-Active-Ring-Primary, rgba(0, 106, 204, 0.2));
+    }
+
+    .lucide {
+      width: 16px;
+      height: 16px;
+    }
+
+    .react-aria-Text {
+      margin-left: var(--space-9);
+    }
+  }
+}

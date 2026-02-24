@@ -1,0 +1,38 @@
+@use "./styles/themes.scss";
+@use "./styles/utilities.scss";
+@use "./styles/typography.scss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz@14..32;14..32,500&display=swap");
+
+:root {
+  @include typography.font;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0;
+  font-weight: 400;
+}
+h2 {
+  margin: 0;
+  font-weight: 400;
+}
+h3 {
+  margin: 0;
+  font-weight: 400;
+}
+h4 {
+  margin: 0;
+  font-weight: 400;
+}
+h5 {
+  margin: 0;
+  font-weight: 400;
+}
+h6 {
+  margin: 0;
+  font-weight: 400;
+}

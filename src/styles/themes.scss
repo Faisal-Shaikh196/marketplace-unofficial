@@ -1,0 +1,554 @@
+:root {
+  --bg-surface: #ffffff;
+  --bg-raised: #ffffff;
+  --bg-sunken: #f6f8fa;
+  --bg-invert: #1d2125;
+  --bg-disabled: #5258664f;
+
+  // Bg Grey
+  --bg-grey-00: #f6f8fa;
+  --bg-grey-100: #e2e4e9;
+  --bg-grey-300: #cdd0d5;
+  --bg-grey-400: #868c98;
+  --bg-grey-500: #525866;
+  --bg-grey-600: #31353f;
+  --bg-grey-700: #20232d;
+  --bg-grey-900: #161a1d;
+
+  // Bg Primary
+  --bg-primary-00: #e6f0fa;
+  --bg-primary-100: #b0d1ef;
+  --bg-primary-200: #549bdd;
+  --bg-primary-500: #006acc;
+  --bg-primary-700: #004b91;
+  --bg-primary-900: #003a70;
+  --bg-primary-1000: #002d56;
+
+  // Bg Yellow
+  --bg-yellow-00: #fef7ec;
+  --bg-yellow-100: #fbebc4;
+  --bg-yellow-200: #f6c97f;
+  --bg-yellow-500: #f2ae40;
+  --bg-yellow-700: #ac7c2d;
+  --bg-yellow-900: #856023;
+  --bg-yellow-1000: #66491b;
+
+  // Bg green
+  --bg-green-00: #dffcf0;
+  --bg-green-100: #baf3db;
+  --bg-green-200: #7ee2b8;
+  --bg-green-500: #22a06b;
+  --bg-green-700: #216e4e;
+  --bg-green-900: #164b35;
+  --bg-green-1000: #143c2b;
+
+  // Bg red
+  --bg-red-00: #fce8ec;
+  --bg-red-100: #f5b9c4;
+  --bg-red-200: #ea6780;
+  --bg-red-500: #df1c41;
+  --bg-red-700: #9e142e;
+  --bg-red-900: #7b0f24;
+  --bg-red-1000: #5e0c1b;
+
+  // Bg Orange
+  --bg-orange-00: #ffede7;
+  --bg-orange-100: #ffc8b5;
+  --bg-orange-200: #fe875e;
+  --bg-orange-500: #fe4c0f;
+  --bg-orange-700: #b4360b;
+  --bg-orange-900: #8c2a08;
+  --bg-orange-1000: #6b2006;
+
+  // Bg Pink
+  --bg-pink-00: #ffeef8;
+  --bg-pink-100: #fecaea;
+  --bg-pink-200: #fd8cd2;
+  --bg-pink-500: #fc54bc;
+  --bg-pink-700: #b33c85;
+  --bg-pink-900: #8b2e67;
+  --bg-pink-1000: #6a234f;
+
+  // Bg Purple
+  --bg-purple-00: #f6eeff;
+  --bg-purple-100: #e2ccff;
+  --bg-purple-200: #c190ff;
+  --bg-purple-500: #a259ff;
+  --bg-purple-700: #733fb5;
+  --bg-purple-900: #59318c;
+  --bg-purple-1000: #44256b;
+
+  // Border Neutral.
+  --border-default: #868c98;
+  --border-subtle: #cdd0d5;
+  --border-subtlest: #e2e4e9;
+  --border-white: #ffffff;
+  --border-invert: #161a1d;
+  --border-disabled: #5258667d;
+
+  // Border Primary.
+  --border-primary-500: #006acc;
+  --border-primary-700: #004b91;
+
+  // Border Yellow.
+  --border-yellow-500: #f2ae40;
+  --border-yellow-700: #ac7c2d;
+
+  // Border Green.
+  --border-green-500: #22a06b;
+  --border-green-700: #216e4e;
+
+  // Border Red.
+  --border-red-500: #df1c41;
+  --border-red-700: #9e142e;
+
+  // Border Pink.
+  --border-pink-500: #fc54bc;
+  --border-pink-700: #b33c85;
+
+  // Border Purple.
+  --border-purple-500: #a259ff;
+  --border-purple-700: #733fb5;
+
+  // Border Orange.
+  --border-orange-500: #fe4c0f;
+  --border-orange-700: #b4360b;
+
+  // Text Neutral
+  --text-neutral-default: #0a0d14;
+  --text-neutral-invert: #161a1d;
+  --text-neutral-oninvert: #ffffff;
+  --text-neutral-subtle: #31353f;
+  --text-neutral-subtler: #525866;
+  --text-neutral-subtlest: #868c98;
+  --text-neutral-disabled: #5258667d;
+
+  // Text Primary.
+  --text-primary-500: #006acc;
+  --text-primary-700: #004b91;
+
+  // Text yellow.
+  --text-yellow-500: #f2ae40;
+  --text-yellow-700: #ac7c2d;
+
+  // Text Green.
+  --text-green-500: #22a06b;
+  --text-green-700: #216e4e;
+
+  // Text Red.
+  --text-red-500: #df1c41;
+  --text-red-700: #9e142e;
+
+  // Text Pink.
+  --text-pink-500: #fc54bc;
+  --text-pink-700: #b33c85;
+
+  // Text purple.
+  --text-purple-500: #a259ff;
+  --text-purple-700: #733fb5;
+
+  // Text orange.
+  --text-orange-500: #fe4c0f;
+  --text-orange-700: #b4360b;
+
+  // Text Title.
+  --text-title-3xl: 56px;
+  --text-title-2xl: 48px;
+  --text-title-xl: 40px;
+  --text-title-lg: 32px;
+  --text-title-md: 24px;
+  --text-title-sm: 20px;
+
+  --text-label-xl: 24px;
+  --text-label-lg: 18px;
+  --text-label-md: 16px;
+  --text-label-sm: 14px;
+  --text-label-xs: 12px;
+
+  --text-para-xl: 24px;
+  --text-para-lg: 18px;
+  --text-para-md: 16px;
+  --text-para-sm: 14px;
+  --text-para-xs: 12px;
+
+  --text-subheading-md: 16px;
+  --text-subheading-sm: 14px;
+  --text-subheading-xs: 12px;
+  --text-subheading-2xs: 10px;
+
+  // Radius
+  --radius-0: 0;
+  --radius-1: 2px;
+  --radius-2: 4px;
+  --radius-3: 6px;
+  --radius-4: 8px;
+  --radius-5: 10px;
+  --radius-6: 12px;
+  --radius-7: 16px;
+  --radius-8: 22px;
+  --radius-9: 28px;
+  --radius-10: 1000px;
+
+  // Spacing
+  --space-0: 0;
+  --space-1: 1px;
+  --space-2: 2px;
+  --space-3: 4px;
+  --space-4: 6px;
+  --space-5: 8px;
+  --space-6: 10px;
+  --space-7: 12px;
+  --space-8: 16px;
+  --space-9: 20px;
+  --space-10: 24px;
+  --space-11: 28px;
+  --space-12: 32px;
+  --space-13: 36px;
+  --space-14: 40px;
+  --space-15: 44px;
+  --space-16: 48px;
+  --space-17: 56px;
+  --space-18: 64px;
+  --space-19: 72px;
+  --space-20: 80px;
+  --space-21: 96px;
+  --space-22: 112px;
+  --space-23: 120px;
+  --space-24: 128px;
+  --space-25: 144px;
+  --space-26: 160px;
+  --space-27: 192px;
+  --space-28: 208px;
+  --space-29: 224px;
+  --space-30: 256px;
+  --space-31: 288px;
+  --space-32: 320px;
+  --space-max: 384px;
+
+  // Shadows
+  --shadow-x-small:
+    0px 0px 10px -2px rgba(40, 46, 51, 0.08),
+    0px 6px 4px -5px rgba(32, 35, 45, 0.16),
+    0px 0px 3px 0px rgba(40, 46, 51, 0.08);
+  --shadow-small:
+    0px 4px 12px -4px rgba(255, 255, 255, 1),
+    0px 2px 4px -2px rgba(32, 35, 45, 0.16);
+  --shadow-medium: 0px 16px 32px -12px #20232d29;
+  --shadow-large: 0px 16px 40px -8px #20232d29, 0px 0px 6px -1px #282e3314;
+  --shadow-x-large: 0px 24px 56px -4px #20232d29;
+  --shadow-2x-large: 0px 2px 16px 0px #20232d33;
+
+  --button-badge-primary:
+    0px 0px 0px 1px #004b91cc, 0px -1px 1px 0px #002d5680,
+    0px 2px 1px 0px #ffffff33;
+
+  --button-badge-secondary:
+    0px 0px 0px 1px #0000001a, 0px -1px 2px 0px #0000004d,
+    0px 2px 2px 0px #ffffff0d;
+
+  --btn-primary-top: rgba(255, 255, 255, 0.16);
+  --btn-primary-bottom: rgba(255, 255, 255, 0);
+}
+
+.dark {
+  --bg-surface: #1d2125;
+  --bg-raised: #22272b;
+  --bg-sunken: #161a1d;
+  --bg-invert: #ffffff;
+  --bg-disabled: #5258664f;
+
+  // Bg Grey
+  --bg-grey-00: #22272b;
+  --bg-grey-100: #282e33;
+  --bg-grey-200: #2c333a;
+  --bg-grey-400: #454f59;
+  --bg-grey-500: #596773;
+  --bg-grey-600: #282e33;
+  --bg-grey-700: #8c9bab;
+  --bg-grey-900: #ffffff;
+
+  // Bg Primary
+  --bg-primary-00: #002d56;
+  --bg-primary-100: #003a70;
+  --bg-primary-200: #004b91;
+  --bg-primary-500: #006acc;
+  --bg-primary-700: #549bdd;
+  --bg-primary-900: #b0d1ef;
+  --bg-primary-1000: #e6f0fa;
+
+  // Bg Yellow
+  --bg-yellow-00: #66491b;
+  --bg-yellow-100: #856023;
+  --bg-yellow-200: #ac7c2d;
+  --bg-yellow-500: #f2ae40;
+  --bg-yellow-700: #f6c97f;
+  --bg-yellow-900: #fbebc4;
+  --bg-yellow-1000: #fef7ec;
+
+  // Bg green
+  --bg-green-00: #143c2b;
+  --bg-green-100: #164b35;
+  --bg-green-200: #216e4e;
+  --bg-green-500: #22a06b;
+  --bg-green-700: #7ee2b8;
+  --bg-green-900: #baf3db;
+  --bg-green-1000: #dffcf0;
+
+  // Bg red
+  --bg-red-00: #5e0c1b;
+  --bg-red-100: #7b0f24;
+  --bg-red-200: #9e142e;
+  --bg-red-500: #df1c41;
+  --bg-red-700: #ea6780;
+  --bg-red-900: #f5b9c4;
+  --bg-red-1000: #fce8ec;
+
+  // Bg Orange
+  --bg-orange-00: #6b2006;
+  --bg-orange-100: #8c2a08;
+  --bg-orange-200: #b4360b;
+  --bg-orange-500: #fe4c0f;
+  --bg-orange-700: #fe875e;
+  --bg-orange-900: #ffc8b5;
+  --bg-orange-1000: #ffede7;
+
+  // Bg Pink
+  --bg-pink-00: #6a234f;
+  --bg-pink-100: #8b2e67;
+  --bg-pink-200: #b33c85;
+  --bg-pink-500: #fc54bc;
+  --bg-pink-700: #fd8cd2;
+  --bg-pink-900: #fecaea;
+  --bg-pink-1000: #ffeef8;
+
+  // Bg Purple
+  --bg-purple-00: #44256b;
+  --bg-purple-100: #59318c;
+  --bg-purple-200: #733fb5;
+  --bg-purple-500: #a259ff;
+  --bg-purple-700: #c190ff;
+  --bg-purple-900: #e2ccff;
+  --bg-purple-1000: #f6eeff;
+
+  // Text Neutral
+  --text-neutral-default: #b6c2cf;
+  --text-neutral-invert: #ffffff;
+  --text-neutral-oninvert: #161a1d;
+  --text-neutral-subtle: #8c9bab;
+  --text-neutral-subtler: #738496;
+  --text-neutral-subtlest: #596773;
+  --text-neutral-disabled: #5258667d;
+
+  // Text Primary.
+  --text-primary-500: #006acc;
+  --text-primary-700: #549bdd;
+
+  // Text yellow.
+  --text-yellow-500: #f2ae40;
+  --text-yellow-700: #f6c97f;
+
+  // Text Green.
+  --text-green-500: #22a06b;
+  --text-green-700: #7ee2b8;
+
+  // Text Red.
+  --text-red-500: #df1c41;
+  --text-red-700: #ea6780;
+
+  // Text Pink..
+  --text-pink-500: #fc54bc;
+  --text-pink-700: #fd8cd2;
+
+  // Text purple.
+  --text-purple-500: #a259ff;
+  --text-purple-700: #c190ff;
+
+  // Text orange.
+  --text-orange-500: #fe4c0f;
+  --text-orange-700: #fe875e;
+
+  // Border Neutral.
+  --border-default: #454f59;
+  --border-subtle: #2c333a;
+  --border-subtlest: #282e33;
+  --border-white: #161a1d;
+  --border-invert: #ffffff;
+  --border-disabled: #5258667d;
+
+  // Border Primary.
+  --border-primary-500: #006acc;
+  --border-primary-700: #549bdd;
+
+  // Border Yellow.
+  --border-yellow-500: #f2ae40;
+  --border-yellow-700: #f6c97f;
+
+  // Border Green.
+  --border-green-500: #22a06b;
+  --border-green-700: #7ee2b8;
+
+  // Border Red.
+  --border-red-500: #df1c41;
+  --border-red-700: #ea6780;
+
+  // Border Pink.
+  --border-pink-500: #fc54bc;
+  --border-pink-700: #fd8cd2;
+
+  // Border Purple.
+  --border-purple-500: #a259ff;
+  --border-purple-700: #c190ff;
+
+  // Border Orange.
+  --border-orange-500: #fe4c0f;
+  --border-orange-700: #fe875e;
+
+  // Text Title.
+  --text-title-3xl: 56px;
+  --text-title-2xl: 48px;
+  --text-title-xl: 40px;
+  --text-title-lg: 32px;
+  --text-title-md: 24px;
+  --text-title-sm: 20px;
+
+  --text-label-xl: 24px;
+  --text-label-lg: 18px;
+  --text-label-md: 16px;
+  --text-label-sm: 14px;
+  --text-label-xs: 12px;
+
+  --text-para-xl: 24px;
+  --text-para-lg: 18px;
+  --text-para-md: 16px;
+  --text-para-sm: 14px;
+  --text-para-xs: 12px;
+
+  --text-subheading-md: 16px;
+  --text-subheading-sm: 14px;
+  --text-subheading-xs: 12px;
+  --text-subheading-2xs: 10px;
+
+  // Radius
+  --radius-0: 0;
+  --radius-1: 2px;
+  --radius-2: 4px;
+  --radius-3: 6px;
+  --radius-4: 8px;
+  --radius-5: 10px;
+  --radius-6: 12px;
+  --radius-7: 16px;
+  --radius-8: 22px;
+  --radius-9: 28px;
+  --radius-10: 1000px;
+
+  // Spacing
+  --space-0: 0;
+  --space-1: 1px;
+  --space-2: 2px;
+  --space-3: 4px;
+  --space-4: 6px;
+  --space-5: 8px;
+  --space-6: 10px;
+  --space-7: 12px;
+  --space-8: 16px;
+  --space-9: 20px;
+  --space-10: 24px;
+  --space-11: 28px;
+  --space-12: 32px;
+  --space-13: 36px;
+  --space-14: 40px;
+  --space-15: 44px;
+  --space-16: 48px;
+  --space-17: 56px;
+  --space-18: 64px;
+  --space-19: 72px;
+  --space-20: 80px;
+  --space-21: 96px;
+  --space-22: 112px;
+  --space-23: 120px;
+  --space-24: 128px;
+  --space-25: 144px;
+  --space-26: 160px;
+  --space-27: 192px;
+  --space-28: 208px;
+  --space-29: 224px;
+  --space-30: 256px;
+  --space-31: 288px;
+  --space-32: 320px;
+  --space-max: 384px;
+
+  // Shadows
+  --shadow-x-small:
+    0px 0px 10px -2px #282e3314, 0px 6px 4px -5px #20232d29,
+    0px 0px 3px 0px #282e3314;
+  --shadow-small: 0px 4px 12px -4px #282e3314, 0px 2px 4px -2px #20232d29;
+  --shadow-medium: 0px 16px 32px -12px #20232d29;
+  --shadow-large: 0px 16px 40px -8px #20232d29, 0px 0px 6px -1px #282e3314;
+  --shadow-x-large: 0px 24px 56px -4px #20232d29;
+  --shadow-2x-large: 0px 2px 16px 0px #20232d33;
+
+  --btn-primary-top: rgba(255, 255, 255, 0.16);
+  --btn-primary-bottom: rgba(255, 255, 255, 0);
+}
+
+@mixin flex(
+  $direction: row,
+  $justify: flex-start,
+  $align: stretch,
+  $wrap: nowrap,
+  $gap: null
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+
+  @if $gap != null {
+    gap: $gap;
+  }
+}
+
+@mixin grid(
+  $columns: auto,
+  $rows: null,
+  $gap: null,
+  $justifyItems: stretch,
+  $alignItems: stretch,
+  $justifyContent: null,
+  $alignContent: null
+) {
+  display: grid;
+
+  @if $columns != null {
+    grid-template-columns: $columns;
+  }
+  @if $rows != null {
+    grid-template-rows: $rows;
+  }
+  @if $gap != null {
+    gap: $gap;
+  }
+  @if $justifyItems != null {
+    justify-items: $justifyItems;
+  }
+  @if $alignItems != null {
+    align-items: $alignItems;
+  }
+  @if $justifyContent != null {
+    justify-content: $justifyContent;
+  }
+  @if $alignContent != null {
+    align-content: $alignContent;
+  }
+}
+
+@mixin border(
+  $color: var(--border-default),
+  $radius: var(--radius-0),
+  $width: 1px,
+  $style: solid
+) {
+  border: $width $style $color;
+  border-radius: $radius;
+}
