@@ -9,12 +9,14 @@ import { Button } from "../../components/ui/Button/Button";
 import { Form } from "../../components/ui/Form/Form";
 import CustomInput from "../../components/shared/CustomInput/CustomInput";
 import { Lock } from "../../../public/icons/custom";
-import { Link } from "react-aria-components";
+import { Link } from "@tanstack/react-router";
 import { Select } from "../../components/ui/Select/Select";
 import { DropdownItem } from "../../components/ui/ListBox/ListBox";
 import "./style.scss";
 import Dropdown from "../../components/shared/Dropdown/Dropdown";
 import { useObservable } from "@legendapp/state/react";
+import { Checkbox } from "../../components/ui/Checkbox/Checkbox";
+import { themeContext } from "../../context/theme.context";
 
 // const ALL_ROLES: Role[] = ["user", "developer", "manufacturer", "superadmin"];
 
@@ -34,7 +36,22 @@ export default function Register() {
     ],
     state: ["State 1", "State 2", "State 3", "State 4", "State 5"],
     city: ["City 1", "City 2", "City 3", "City 4", "City 5"],
+    form: {
+      name: "",
+      email: "",
+      phone: "",
+      username: "",
+      password: "",
+      confirmPassword: "",
+      country: "",
+      state: "",
+      city: "",
+      rememberMe: false,
+    },
   });
+
+  const { toggleTheme } = themeContext;
+
   // const nav = useNavigate();
   // const qc = useQueryClient();
 
@@ -101,7 +118,7 @@ export default function Register() {
       </div>
       <div className="right-cont">
         <div className="theme-toggler">
-          <Button variant="secondary">
+          <Button variant="secondary" onClick={toggleTheme}>
             <SunMedium fill="#000" />
           </Button>
         </div>
@@ -121,19 +138,28 @@ export default function Register() {
               label="Name"
               placeholder="Enter your name"
               isRequired
+              minLength={3}
+              value$={$state.form.name}
+              onChange={(val) => $state.form.name.set(val)}
             />
 
             <div className="form-row">
               <CustomInput
                 label="Email Address"
                 icon={Mail}
+                value$={$state.form.email}
+                onChange={(val) => $state.form.email.set(val)}
                 placeholder="Enter your email address"
                 type="email"
+                errorMessage={"The Email must match the pattern @fsk.com"}
+                pattern="^[A-Za-z0-9._%+-]+@fsk\.com$"
                 isRequired
               />
               <CustomInput
                 label="Mobile Number"
                 icon={Phone}
+                value$={$state.form.phone}
+                onChange={(val) => $state.form.phone.set(val)}
                 placeholder="Enter your phone number"
                 type="tel"
                 isRequired
@@ -142,6 +168,8 @@ export default function Register() {
 
             <CustomInput
               label="Create Username"
+              value$={$state.form.username}
+              onChange={(val) => $state.form.username.set(val)}
               placeholder="Create your username"
               isRequired
             />
@@ -150,6 +178,8 @@ export default function Register() {
               <CustomInput
                 label="Create Password"
                 icon={Lock}
+                value$={$state.form.password}
+                onChange={(val) => $state.form.password.set(val)}
                 placeholder="Enter your password"
                 secureTextEntry
                 isRequired
@@ -158,6 +188,8 @@ export default function Register() {
               <CustomInput
                 label="Confirm Password"
                 icon={Lock}
+                value$={$state.form.confirmPassword}
+                onChange={(val) => $state.form.confirmPassword.set(val)}
                 placeholder="Confirm your password"
                 secureTextEntry
                 isRequired
@@ -178,6 +210,7 @@ export default function Register() {
               $options={$state.country}
               placeholder="Select your Country"
               label="Country"
+              onChange={(value) => $state.form.country.set(value as string)}
               // multiSelect={true}
               isRequired
             />
@@ -192,9 +225,20 @@ export default function Register() {
                 <DropdownItem id="city2">City 2</DropdownItem>
               </Select>
             </div>
+
+            <div className="options">
+              <Checkbox onChange={() => $state.form.rememberMe.toggle()}>
+                Remember Me
+              </Checkbox>
+              <Link to="/forgot-password">Forget Password</Link>
+            </div>
           </Form>
           <div className="footer">
-            <Button type="submit" className="login-btn">
+            <Button
+              onClick={() => console.table($state.form.get())}
+              type="submit"
+              className="login-btn"
+            >
               Submit
             </Button>
           </div>
@@ -204,7 +248,7 @@ export default function Register() {
           <p>
             Already have an account?{" "}
             <span>
-              <Link href="/login">Sign In</Link>
+              <Link to="/login">Sign In</Link>
             </span>
           </p>
         </div>

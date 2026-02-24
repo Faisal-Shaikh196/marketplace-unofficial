@@ -51,13 +51,13 @@ export function Select<T extends object>({
   onChange,
   ...props
 }: SelectProps<T>) {
-  const [selectedKey, setSelectedKey] = useState<Key | null>(
+  const [selectedKey, setSelectedKey] = useState<Key | null | Key[]>(
     defaultSelectedKey ?? null
   );
 
-  const handleSelectionChange = (key: Key | null) => {
+  const handleSelectionChange = (key: Key | null | Key[]) => {
     setSelectedKey(key);
-    onSelectionChange?.(key);
+    onChange?.(key);
   };
 
   const getSelectedIcon = () => {

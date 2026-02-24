@@ -24,7 +24,7 @@ const Dropdown = ({
 
     const keyString = Array.isArray(key) ? key.map(String) : String(key);
     const options = $options.get();
-    let result: string | Option | string[] | Option[];
+    let result: string | Option | string[] | Option[] = multiSelect ? [] : "";
 
     if (multiSelect) {
       if ($options.get().length > 0) {
@@ -45,7 +45,7 @@ const Dropdown = ({
         result = keyString;
       } else {
         const opts = options as Option[];
-        let res =
+        const res =
           opts.find(
             (opt) => opt.value === keyString || opt.label === keyString
           ) ?? keyString;
@@ -53,7 +53,7 @@ const Dropdown = ({
       }
     }
 
-    onChange && onChange(result);
+    onChange?.(result as unknown as string | Option[]);
   };
 
   useObserve(() => {
@@ -73,10 +73,10 @@ const Dropdown = ({
         aria-label={label}
         selectionMode={multiSelect ? "multiple" : "single"}
         placeholder={placeholder}
-        defaultSelectedKey={
+        defaultValue={
           typeof defaultValue === "string" ? defaultValue : undefined
         }
-        onSelectionChange={handleChange}
+        onChange={handleChange}
         scrollbarNone={scrollbarNone}
         isRequired={isRequired}
         addBtn={addBtn}
@@ -132,7 +132,7 @@ const Dropdown = ({
                 }
               >
                 {renderIcon()}
-                <span style={{ flex: 1 }}> {option.label}</span>    
+                <span style={{ flex: 1 }}> {option.label}</span>
                 {renderRytIcon()}
               </SelectItem>
             );

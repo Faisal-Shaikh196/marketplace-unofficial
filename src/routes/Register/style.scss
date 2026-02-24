@@ -136,6 +136,19 @@
         }
       }
 
+      .options {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 8px;
+
+        .react-aria-Link {
+          @include typography.subheading-2xs;
+          text-decoration: underline;
+          color: var(--text-primary-500);
+        }
+      }
+
       .footer {
         padding: var(--space-7) var(--space-9);
         background: var(--bg-sunken);

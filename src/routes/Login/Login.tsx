@@ -9,9 +9,20 @@ import { Form } from "../../components/ui/Form/Form";
 import "./style.scss";
 import { Star, SunMedium } from "lucide-react";
 import { Lock } from "../../../public/icons/custom";
-import { Link } from "react-aria-components";
+import { Checkbox } from "../../components/ui/Checkbox/Checkbox";
+import { Link } from "@tanstack/react-router";
+import { themeContext } from "../../context/theme.context";
+import { useObservable } from "@legendapp/state/react";
 
 export default function Login() {
+  const { toggleTheme } = themeContext;
+  const $state = useObservable({
+    form: {
+      username: "",
+      password: "",
+    },
+  });
+
   // const nav = useNavigate();
   // const qc = useQueryClient();
 
@@ -35,7 +46,7 @@ export default function Login() {
 
   return (
     <>
-      <div className="container">
+      <div className="login-container">
         <div className="left-cont">
           <div className="top">
             <img src="./images/marketplace.png" alt="marketplace logo" />
@@ -70,7 +81,7 @@ export default function Login() {
         </div>
         <div className="right-cont">
           <div className="theme-toggler">
-            <Button variant="secondary">
+            <Button variant="secondary" onClick={toggleTheme}>
               <SunMedium fill="#000" />
             </Button>
           </div>
@@ -80,20 +91,36 @@ export default function Login() {
               <h2>Welcome Back</h2>
               <p>Welcome Back! Please enter your details.</p>
             </div>
-            <Form>
+            <Form
+              action={(formData) => {
+                console.table({
+                  username: formData.get("username"),
+                  password: formData.get("password"),
+                });
+              }}
+            >
               <CustomInput
+                name="username"
                 label="Username"
                 icon={Lock}
                 placeholder="Enter your username..."
                 tooltip="Your Name Must be Unique"
+                value$={$state.form.username}
+                onChange={(value) => $state.form.username.set(value)}
               />
               <CustomInput
+                name="password"
                 label="Password"
                 placeholder="Enter your password..."
+                value$={$state.form.password}
+                onChange={(value) => $state.form.password.set(value)}
                 secureTextEntry
               />
 
-              <div></div>
+              <div className="options">
+                <Checkbox>Remember Me</Checkbox>
+                <Link to="/forgot-password">Forget Password</Link>
+              </div>
               <div className="btn-grp">
                 <Button type="submit" className="login-btn">
                   Sign In
@@ -111,7 +138,7 @@ export default function Login() {
               <p>
                 Dont have an account?{" "}
                 <span>
-                  <Link href="/register">Sign Up</Link>
+                  <Link to="/register">Sign Up</Link>
                 </span>
               </p>
             </div>

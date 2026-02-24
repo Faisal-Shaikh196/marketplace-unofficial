@@ -2,9 +2,9 @@
 
 .react-aria-Tooltip {
   box-shadow: 0 8px 20px rgba(0 0 0 / 0.1);
-  border-radius: var(--radius);
+  border-radius: var(--radius-3);
   background: var(--bg-primary-500);
-  color: var(--highlight-foreground);
+  color: var(--text-neutral-invert);
   forced-color-adjust: none;
   outline: none;
   padding: 4px 8px;
@@ -57,6 +57,6 @@
 
   .react-aria-OverlayArrow svg {
     display: block;
-    fill: var(--highlight-background);
+    fill: var(--bg-primary-500);
   }
 }

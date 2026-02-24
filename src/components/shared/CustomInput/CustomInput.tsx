@@ -27,6 +27,7 @@ export interface SearchFieldProps extends AriaSearchFieldProps {
   value$?: Observable<string>;
   onChange?: (value: string) => void;
   onClear?: () => void;
+  name?: string;
 }
 
 function CustomInput({
@@ -41,6 +42,7 @@ function CustomInput({
   value$,
   onChange,
   onClear,
+  name,
   ...props
 }: SearchFieldProps) {
   //   const [isSecure, setIsSecure] = React.useState(secureTextEntry ?? false);
@@ -62,7 +64,7 @@ function CustomInput({
           </Label>
         )}
         {onClear && (
-          <button className="input-clear" onClick={onClear}>
+          <button className="input-clear" type="button" onClick={onClear}>
             Clear
           </button>
         )}
@@ -73,6 +75,7 @@ function CustomInput({
         <Memo>
           {() => (
             <Input
+              name={name}
               placeholder={placeholder}
               type={$store.isSecure.get() ? "password" : type}
               className="react-aria-Input inset"
@@ -113,7 +116,5 @@ function CustomInput({
     </AriaSearchField>
   );
 }
-
-
 
 export default CustomInput;

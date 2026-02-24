@@ -1,0 +1,65 @@
+@use "../../../styles/typography.scss";
+@import "../../../styles/themes.scss";
+@import "../../../styles/utilities.scss";
+
+.react-aria-Checkbox {
+  --checkmark-color: var(--bg-primary-500);
+
+  display: flex;
+  /* This is needed so the HiddenInput is positioned correctly */
+  position: relative;
+  align-items: center;
+  gap: var(--space-2);
+  font: var(--font-size) system-ui;
+  @include typography.label-sm;
+
+  color: var(--text-neutral-default);
+  forced-color-adjust: none;
+  -webkit-tap-highlight-color: transparent;
+
+  .indicator {
+    width: calc(var(--space-3) * 4.5);
+    height: calc(var(--space-3) * 4.5);
+    box-sizing: border-box;
+    border-radius: var(--radius-3);
+    border: 1px solid var(--border-subtlest);
+    background: var(--bg-sunken);
+    transition: all 200ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  svg {
+    width: calc(100% - var(--space-2));
+    height: calc(100% - var(--space-2));
+    fill: none;
+    stroke: var(--checkmark-color);
+    stroke-width: 3px;
+    stroke-dasharray: 22px;
+    stroke-dashoffset: 66;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: all 200ms;
+  }
+
+  &[data-selected],
+  &[data-indeterminate] {
+    svg {
+      stroke-dashoffset: 44;
+    }
+  }
+
+  &[data-indeterminate] {
+    svg {
+      stroke: none;
+      fill: var(--checkmark-color);
+    }
+  }
+
+  &[data-disabled] {
+    color: var(--text-neutral-disabled);
+    --checkmark-color: var(--text-neutral-disabled);
+  }
+}
