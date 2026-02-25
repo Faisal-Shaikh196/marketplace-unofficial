@@ -97,8 +97,8 @@ export default function Register() {
           </p>
           <img className="avatar" src="./images/Avatar.png" alt="avatar" />
           <div className="avatar-info">
-            <h2>Evanishka Franklin</h2>
-            <p>CTO, GMR</p>
+            <h2 className="label-xl">Evanishka Franklin</h2>
+            <p className="label-lg">CTO, GMR</p>
           </div>
 
           <div className="avatar-rating">
@@ -111,7 +111,7 @@ export default function Register() {
         </div>
 
         <div className="bottom">
-          <p>
+          <p className="subheading-sm">
             Powered By <span>Ease My AI</span>
           </p>
         </div>
@@ -129,8 +129,8 @@ export default function Register() {
               <FileText color="var(--bg-primary-500)" />
             </div>
             <div className="head-info">
-              <h2>Your Details</h2>
-              <p>Please provide your personal details.</p>
+              <h2 className="label-md">Your Details</h2>
+              <p className="para-sm">Please provide your personal details.</p>
             </div>
           </div>
           <Form>
@@ -230,7 +230,12 @@ export default function Register() {
               <Checkbox onChange={() => $state.form.rememberMe.toggle()}>
                 Remember Me
               </Checkbox>
-              <Link to="/forgot-password">Forget Password</Link>
+              <Link
+                className="subheading-xs Link"
+                to={"/forgot-password" as any}
+              >
+                Forget Password
+              </Link>
             </div>
           </Form>
           <div className="footer">
@@ -245,10 +250,10 @@ export default function Register() {
         </div>
 
         <div className="signup-link">
-          <p>
+          <p className="subheading-xs">
             Already have an account?{" "}
             <span>
-              <Link to="/login">Sign In</Link>
+              <Link to={"/login" as any}>Sign In</Link>
             </span>
           </p>
         </div>

@@ -12,7 +12,7 @@ export function Checkbox({
   children?: React.ReactNode;
 }) {
   return (
-    <AriaCheckbox {...props}>
+    <AriaCheckbox className="label-sm react-aria-Checkbox" {...props}>
       {({ isIndeterminate }) => (
         <>
           <div className="indicator">

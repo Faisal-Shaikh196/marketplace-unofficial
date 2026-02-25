@@ -5,201 +5,260 @@
   color: var(--text-neutral-default);
 }
 
-@mixin title-3xl {
+@mixin title-3xl-mixin {
   font-family: "Inter", sans-serif;
   font-size: var(--text-title-3xl);
   font-weight: 500;
   line-height: 64px;
   letter-spacing: -1%;
-  color: var(--text-neutral-default);
 }
 
-@mixin title-2xl {
+@mixin title-2xl-mixin {
   font-family: "Inter", sans-serif;
   font-size: var(--text-title-2xl);
   font-style: normal;
   font-weight: 500;
   line-height: 56px;
   letter-spacing: -1%;
-  color: var(--text-neutral-default);
 }
 
-@mixin title-xl {
+@mixin title-xl-mixin {
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 500;
   line-height: 48px;
   letter-spacing: -1%;
   font-size: var(--text-title-xl);
-  color: var(--text-neutral-default);
 }
 
-@mixin title-lg {
+@mixin title-lg-mixin {
   font-family: "Inter", sans-serif;
   font-size: var(--text-title-lg);
   font-style: normal;
   font-weight: 500;
   line-height: 40px;
   letter-spacing: -1%;
-  color: var(--text-neutral-default);
 }
 
-@mixin title-md {
+@mixin title-md-mixin {
   font-family: "Inter", sans-serif;
   font-size: var(--text-title-md);
   font-style: normal;
   font-weight: 500;
   line-height: 32px;
   letter-spacing: 0%;
-  color: var(--text-neutral-default);
 }
 
-@mixin title-sm {
+@mixin title-sm-mixin {
   font-family: "Inter", sans-serif;
   font-size: var(--text-title-sm);
   font-style: normal;
   font-weight: 500;
   line-height: 28px;
   letter-spacing: 0%;
-  color: var(--text-neutral-default);
 }
 
-@mixin label-xl {
+@mixin label-xl-mixin {
   font-family: "Inter", sans-serif;
   font-size: var(--text-label-xl);
   font-style: normal;
   font-weight: 500;
   line-height: 32px;
   letter-spacing: -1.5%;
-  color: var(--text-neutral-default);
 }
 
-@mixin label-lg {
+@mixin label-lg-mixin {
   font-family: "Inter", sans-serif;
   font-size: var(--text-label-lg);
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
   letter-spacing: -1.5%;
-  color: var(--text-neutral-default);
 }
 
-@mixin label-md {
+@mixin label-md-mixin {
   font-family: "Inter", sans-serif;
   font-size: var(--text-label-md);
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
   letter-spacing: -1.1%;
-  color: var(--text-neutral-default);
 }
 
-@mixin label-sm {
+@mixin label-sm-mixin {
   font-family: "Inter", sans-serif;
   font-size: var(--text-label-sm);
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
   letter-spacing: -0.6%;
-  color: var(--text-neutral-default);
 }
 
-@mixin label-xs {
+@mixin label-xs-mixin {
   font-family: "Inter", sans-serif;
   font-size: var(--text-label-xs);
   font-style: normal;
   font-weight: 500;
   line-height: 16px;
   letter-spacing: -0.6%;
-  color: var(--text-neutral-default);
 }
 
-@mixin para-xl {
+@mixin para-xl-mixin {
   font-family: "Inter", sans-serif;
   font-size: var(--text-para-xl);
   font-style: normal;
   font-weight: 400;
   line-height: 32px;
   letter-spacing: -1.5%;
-  color: var(--text-neutral-default);
 }
 
-@mixin para-lg {
+@mixin para-lg-mixin {
   font-family: "Inter", sans-serif;
   font-size: var(--text-para-lg);
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: -1.5%;
-  color: var(--text-neutral-default);
 }
 
-@mixin para-md {
+@mixin para-md-mixin {
   font-family: "Inter", sans-serif;
   font-size: var(--text-para-md);
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: -1.1%;
-  color: var(--text-neutral-default);
 }
 
-@mixin para-sm {
+@mixin para-sm-mixin {
   font-family: "Inter", sans-serif;
   font-size: var(--text-para-sm);
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
   letter-spacing: -0.6%;
-  color: var(--text-neutral-default);
 }
 
-@mixin para-xs {
+@mixin para-xs-mixin {
   font-family: "Inter", sans-serif;
   font-size: var(--text-para-xs);
   font-style: normal;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0%;
-  color: var(--text-neutral-default);
 }
 
-@mixin subheading-md {
+@mixin subheading-md-mixin {
   font-family: "Inter", sans-serif;
   font-size: var(--text-subheading-md);
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
   letter-spacing: 6%;
-  color: var(--text-neutral-default);
 }
 
-@mixin subheading-sm {
+@mixin subheading-sm-mixin {
   font-family: "Inter", sans-serif;
   font-size: var(--text-subheading-sm);
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
   letter-spacing: 6%;
-  color: var(--text-neutral-default);
 }
 
-@mixin subheading-xs {
+@mixin subheading-xs-mixin {
   font-family: "Inter", sans-serif;
   font-size: var(--text-subheading-xs);
   font-style: normal;
   font-weight: 500;
   line-height: 16px;
   letter-spacing: 4%;
-  color: var(--text-neutral-default);
 }
 
-@mixin subheading-2xs {
+@mixin subheading-2xs-mixin {
   font-family: "Inter", sans-serif;
   font-size: var(--text-subheading-2xs);
   font-style: normal;
   font-weight: 500;
   line-height: 16px;
   letter-spacing: 2%;
-  color: var(--text-neutral-default);
+}
+
+.title-3xl {
+  @include title-3xl-mixin;
+}
+
+.title-2xl {
+  @include title-2xl-mixin;
+}
+
+.title-xl {
+  @include title-xl-mixin;
+}
+
+.title-lg {
+  @include title-lg-mixin;
+}
+
+.title-md {
+  @include title-md-mixin;
+}
+
+.title-sm {
+  @include title-sm-mixin;
+}
+.label-xl {
+  @include label-xl-mixin;
+}
+
+.label-lg {
+  @include label-lg-mixin;
+}
+
+.label-md {
+  @include label-md-mixin;
+}
+
+.label-sm {
+  @include label-sm-mixin;
+}
+
+.label-xs {
+  @include label-xs-mixin;
+}
+
+.para-xl {
+  @include para-xl-mixin;
+}
+
+.para-lg {
+  @include para-lg-mixin;
+}
+
+.para-md {
+  @include para-md-mixin;
+}
+
+.para-sm {
+  @include para-sm-mixin;
+}
+
+.para-xs {
+  @include para-xs-mixin;
+}
+
+.subheading-md {
+  @include subheading-md-mixin;
+}
+
+.subheading-sm {
+  @include subheading-sm-mixin;
+}
+
+.subheading-xs {
+  @include subheading-xs-mixin;
+}
+
+.subheading-2xs {
+  @include subheading-2xs-mixin;
 }

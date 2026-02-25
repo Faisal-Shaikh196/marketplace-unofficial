@@ -13,6 +13,7 @@ import { Checkbox } from "../../components/ui/Checkbox/Checkbox";
 import { Link } from "@tanstack/react-router";
 import { themeContext } from "../../context/theme.context";
 import { useObservable } from "@legendapp/state/react";
+import { queue } from "../../components/ui/Toast/Toast";
 
 export default function Login() {
   const { toggleTheme } = themeContext;
@@ -60,8 +61,8 @@ export default function Login() {
             </p>
             <img className="avatar" src="./images/Avatar.png" alt="avatar" />
             <div className="avatar-info">
-              <h2>Evanishka Franklin</h2>
-              <p>CTO, GMR</p>
+              <h2 className="label-xl">Evanishka Franklin</h2>
+              <p className="label-lg">CTO, GMR</p>
             </div>
 
             <div className="avatar-rating">
@@ -74,7 +75,7 @@ export default function Login() {
           </div>
 
           <div className="bottom">
-            <p>
+            <p className="subheading-sm">
               Powered By <span>Ease My AI</span>
             </p>
           </div>
@@ -88,14 +89,20 @@ export default function Login() {
 
           <div className="form">
             <div className="form-title">
-              <h2>Welcome Back</h2>
-              <p>Welcome Back! Please enter your details.</p>
+              <h2 className="label-xl">Welcome Back</h2>
+              <p className="para-lg">
+                Welcome Back! Please enter your details.
+              </p>
             </div>
             <Form
               action={(formData) => {
                 console.table({
                   username: formData.get("username"),
                   password: formData.get("password"),
+                });
+                queue.add({
+                  title: "Login Attempt",
+                  description: "You have attempted to log in.",
                 });
               }}
             >
@@ -119,7 +126,12 @@ export default function Login() {
 
               <div className="options">
                 <Checkbox>Remember Me</Checkbox>
-                <Link to="/forgot-password">Forget Password</Link>
+                <Link
+                  className="Link subheading-xs"
+                  to={"/forgot-password" as any}
+                >
+                  Forget Password
+                </Link>
               </div>
               <div className="btn-grp">
                 <Button type="submit" className="login-btn">
@@ -135,10 +147,10 @@ export default function Login() {
             </Form>
 
             <div className="signup-link">
-              <p>
+              <p className="subheading-xs">
                 Dont have an account?{" "}
                 <span>
-                  <Link to="/register">Sign Up</Link>
+                  <Link to={"/register" as any}>Sign Up</Link>
                 </span>
               </p>
             </div>

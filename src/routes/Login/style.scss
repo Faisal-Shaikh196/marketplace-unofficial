@@ -3,15 +3,15 @@
 .login-container {
   display: flex;
   flex-direction: row;
+  height: 100vh;
+  background: linear-gradient(#5258660f 50%, #006acc 200%), var(--bg-sunken);
 
   .left-cont {
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 96.7vh;
     padding: 16px;
-    background: linear-gradient(#5258660f 50%, #006acc 200%), var(--bg-sunken);
 
     .top {
       display: flex;
@@ -43,12 +43,8 @@
       .avatar-info {
         margin-top: 16px;
         margin-bottom: 32px;
-        h2 {
-          @include typography.label-xl;
-        }
 
         p {
-          @include typography.label-lg;
           text-align: center;
           margin: 0;
         }
@@ -57,7 +53,7 @@
 
     .bottom {
       p {
-        @include typography.subheading-sm;
+        // @include typography.subheading-sm;
         color: var(--text-subtlest);
         text-align: center;
 
@@ -89,13 +85,13 @@
       .form-title {
         margin-bottom: 28px;
         h2 {
-          @include typography.label-xl;
+          // @include typography.label-xl;
           margin-top: 0px;
           margin-bottom: 8px;
         }
 
         p {
-          @include typography.para-lg;
+          // @include typography.para-lg;
           color: var(--text-neutral-subtler);
           margin: 0;
         }
@@ -111,10 +107,9 @@
         align-items: center;
         margin-top: 8px;
 
-        .react-aria-Link {
-          @include typography.subheading-2xs;
-          text-decoration: underline;
+        .Link {
           color: var(--text-primary-500);
+          text-decoration: underline;
         }
       }
 
@@ -139,7 +134,7 @@
       text-align: center;
 
       p {
-        @include typography.subheading-xs;
+        // @include typography.subheading-xs;
         color: var(--text-neutral-subtlest);
         margin: 0;
 

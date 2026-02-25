@@ -10,7 +10,7 @@ import type {
 import { Label, FieldError, Description } from "../../ui/Form/Form";
 import { Eye, EyeClosed, Info } from "lucide-react";
 import { Tooltip, TooltipTrigger } from "../../ui/Tooltip/Tooltip";
-import React from "react";
+import React, { useRef } from "react";
 import { Memo, useObservable } from "@legendapp/state/react";
 import type { Observable } from "@legendapp/state";
 import "./style.scss";
@@ -28,6 +28,8 @@ export interface SearchFieldProps extends AriaSearchFieldProps {
   onChange?: (value: string) => void;
   onClear?: () => void;
   name?: string;
+  otp?: boolean;
+  otpLength?: number;
 }
 
 function CustomInput({
@@ -43,16 +45,110 @@ function CustomInput({
   onChange,
   onClear,
   name,
+  otp = false,
+  otpLength = 4,
   ...props
 }: SearchFieldProps) {
-  //   const [isSecure, setIsSecure] = React.useState(secureTextEntry ?? false);
   const $store = useObservable({
     isSecure: secureTextEntry ?? false,
+    otpValues: Array(otpLength).fill("") as string[],
   });
+
+  const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
   const handleTogglePassword = () => {
     $store.isSecure.set((prev) => !prev);
   };
+
+  const handleOtpChange = (index: number, value: string) => {
+    // Only allow single digit
+    const digit = value.slice(-1);
+    if (digit && !/^\d$/.test(digit)) return;
+
+    const newOtpValues = [...$store.otpValues.get()];
+    newOtpValues[index] = digit;
+    $store.otpValues.set(newOtpValues);
+
+    // Call onChange with combined OTP value
+    onChange?.(newOtpValues.join(""));
+
+    // Auto-focus next input
+    if (digit && index < otpLength - 1) {
+      inputRefs.current[index + 1]?.focus();
+    }
+  };
+
+  const handleOtpKeyDown = (
+    index: number,
+    e: React.KeyboardEvent<HTMLInputElement>
+  ) => {
+    if (e.key === "Backspace" && !$store.otpValues.get()[index] && index > 0) {
+      inputRefs.current[index - 1]?.focus();
+    }
+  };
+
+  const handleOtpPaste = (e: React.ClipboardEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    const pastedData = e.clipboardData.getData("text").slice(0, otpLength);
+    if (!/^\d+$/.test(pastedData)) return;
+
+    const newOtpValues = Array(otpLength).fill("");
+    pastedData.split("").forEach((char, i) => {
+      if (i < otpLength) newOtpValues[i] = char;
+    });
+    $store.otpValues.set(newOtpValues);
+    onChange?.(newOtpValues.join(""));
+
+    // Focus last filled input or the next empty one
+    const focusIndex = Math.min(pastedData.length, otpLength - 1);
+    inputRefs.current[focusIndex]?.focus();
+  };
+
+  if (otp) {
+    return (
+      <div className="custom-searchfield otp-field">
+        <div className="input-header">
+          {label && (
+            <Label className="input-title">
+              {label}
+              {props.isRequired && <span>*</span>}
+            </Label>
+          )}
+        </div>
+        <div className="otp-inputs">
+          <Memo>
+            {() => (
+              <>
+                {$store.otpValues.get().map((val, index) => (
+                  <React.Fragment key={index}>
+                    <Input
+                      ref={(el) => {
+                        inputRefs.current[index] = el;
+                      }}
+                      type="text"
+                      inputMode="numeric"
+                      maxLength={1}
+                      className="otp-input"
+                      value={val}
+                      onChange={(e) => handleOtpChange(index, e.target.value)}
+                      onKeyDown={(e) => handleOtpKeyDown(index, e)}
+                      onPaste={handleOtpPaste}
+                      name={name ? `${name}-${index}` : undefined}
+                    />
+                    {index < otpLength - 1 && (
+                      <span className="otp-separator">.</span>
+                    )}
+                  </React.Fragment>
+                ))}
+              </>
+            )}
+          </Memo>
+        </div>
+        {description && <Description>{description}</Description>}
+        <FieldError>{errorMessage}</FieldError>
+      </div>
+    );
+  }
 
   return (
     <AriaSearchField className="custom-searchfield" {...props}>
@@ -78,7 +174,7 @@ function CustomInput({
               name={name}
               placeholder={placeholder}
               type={$store.isSecure.get() ? "password" : type}
-              className="react-aria-Input inset"
+              className="react-aria-Input inset para-sm"
               value={value$?.get()}
               onChange={(e) => onChange?.(e.target.value)}
             />

@@ -3,15 +3,15 @@
 .container {
   display: flex;
   flex-direction: row;
+  height: 100vh;
+  background: linear-gradient(#5258660f 50%, #006acc 200%), var(--bg-sunken);
 
   .left-cont {
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 96.7vh;
     padding: 16px;
-    background: linear-gradient(#5258660f 50%, #006acc 200%), var(--bg-sunken);
 
     .top {
       display: flex;
@@ -44,11 +44,11 @@
         margin-top: 16px;
         margin-bottom: 32px;
         h2 {
-          @include typography.label-xl;
+          //   @include typography.label-xl;
         }
 
         p {
-          @include typography.label-lg;
+          //   @include typography.label-lg;
           text-align: center;
           margin: 0;
         }
@@ -57,7 +57,7 @@
 
     .bottom {
       p {
-        @include typography.subheading-sm;
+        // @include typography.subheading-sm;
         color: var(--text-subtlest);
         text-align: center;
 
@@ -110,13 +110,13 @@
 
         .head-info {
           h2 {
-            @include typography.label-md;
+            // @include typography.label-md;
             margin: 0px;
             color: var(--text-neutral-default);
           }
 
           p {
-            @include typography.para-sm;
+            // @include typography.para-sm;
             color: var(--text-neutral-subtler);
             margin: 0;
           }
@@ -126,13 +126,13 @@
       .react-aria-Form {
         display: flex;
         flex-direction: column;
-        gap: var(--space-6);
+        gap: var(--space-8);
         padding: 20px;
 
         .form-row {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: var(--space-6);
+          gap: var(--space-8);
         }
       }
 
@@ -142,8 +142,8 @@
         align-items: center;
         margin-top: 8px;
 
-        .react-aria-Link {
-          @include typography.subheading-2xs;
+        .Link {
+          //   @include typography.subheading-2xs;
           text-decoration: underline;
           color: var(--text-primary-500);
         }
@@ -184,7 +184,7 @@
       text-align: center;
 
       p {
-        @include typography.subheading-xs;
+        // @include typography.subheading-xs;
         color: var(--text-neutral-subtlest);
         margin: 0;
 

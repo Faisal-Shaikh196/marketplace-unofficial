@@ -8,7 +8,7 @@
   font-weight: 400;
   margin: 0;
   height: auto;
-  padding: 6px 12px !important;
+  padding: var(--space-6) var(--space-7) !important;
   text-decoration: none;
   background:
     linear-gradient(
@@ -44,15 +44,15 @@
   }
 
   &[data-size="small"] {
-    padding: 8px 16px;
+    padding: var(--space-4) var(--space-6) !important;
   }
 
   &[data-size="medium"] {
-    padding: 10px 20px;
+    padding: var(--space-6) var(--space-7) !important;
   }
 
   &[data-size="large"] {
-    padding: 12px 20px;
+    padding: var(--space-8) var(--space-9) !important;
   }
 
   &[data-pressed] {
@@ -132,70 +132,3 @@
     margin-inline-start: var(--spacing-3);
   }
 }
-
-// .button-base {
-//   border: none;
-//   --button-color: var(--text-oninvert);
-//   --button-background: var(--bg-primary-100);
-//   padding: 6px 12px;
-//   font-weight: 500;
-//   border-radius: 6px;
-//   --button-gradient:
-//     linear-gradient(
-//       180deg,
-//       var(--bg-primary-500) 0%,
-//       var(--bg-primary-700) 100%
-//     ),
-//     var(--bg-primary-500);
-//   --button-text: var(--text-oninvert);
-//   background: var(--bg-primary-500);
-//   color: var(--text-oninvert);
-//   box-shadow: var(--button-badge-secondary);
-//   outline: none;
-//   transform: scale(1);
-//   transform-origin: center;
-//   transition-property: background, color, box-shadow, transform;
-//   transition-duration: 200ms;
-//   will-change: transform;
-
-//   @media (prefers-color-scheme: dark) {
-//     --button-color: var(--bg-primary-500);
-//   }
-
-//   &:disabled {
-//     background: var(--bg-grey-100);
-//     font-weight: 500;
-//     color: rgba(82, 88, 102, 0.49);
-//     cursor: not-allowed;
-//     transform: scale(1);
-//     border: 1px solid var(--border-disabled);
-//     box-shadow: none;
-
-//     &:hover {
-//       cursor: not-allowed;
-//       background: var(--bg-grey-100);
-//       transform: scale(1);
-//     }
-//   }
-
-//   &:active {
-//     transform: scale(0.97);
-//     background: var(--bg-primary-500, #006acc);
-//   }
-
-//   &:hover {
-//     background: var(--bg-primary-700);
-//     cursor: pointer;
-//   }
-
-//   &:where([data-size="small"]) {
-//     padding: 8px 16px;
-//   }
-
-//   &:where([data-size="medium"]) {
-//     padding: 10px 20px;
-//   }
-//   &:where([data-size="large"]) {
-//     padding: 12px 20px;
-//   }
-// }

@@ -33,7 +33,12 @@ export const routesConfig: RouteConfig[] = [
     component: "REGISTER",
     group: "public",
   },
-
+  {
+    key: "FORGOTPASSWORD",
+    path: "/forgot-password",
+    component: "FORGOTPASSWORD",
+    group: "public",
+  },
   {
     key: "DASHBOARD",
     path: "/dashboard",

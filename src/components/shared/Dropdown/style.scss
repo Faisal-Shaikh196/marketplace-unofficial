@@ -9,17 +9,16 @@
 }
 
 .react-aria-Select {
-  //     background: var(--bg-surface);
-  //   border-radius: var(--radius-5);
   width: 100%;
 
   .react-aria-Label {
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
-    line-height: 20px; /* 142.857% */
+    line-height: 20px;
     letter-spacing: -0.084px;
     color: var(--text-neutral-default);
+    margin-bottom: var(--space-4);
 
     span {
       color: var(--bg-primary-500);
@@ -29,11 +28,11 @@
   .react-aria-Button {
     background: var(--border-surface);
     border: 1px solid var(--border-subtlest);
-    padding: var(--space-3) var(--space-7) !important;
+    // padding: var(--space-3) var(--space-7) !important;
     box-shadow: none;
 
     .react-aria-SelectValue[data-placeholder] {
-      @include typography.para-sm;
+      // @include typography.para-sm;
       color: var(--text-neutral-subtlest);
     }
 
@@ -50,12 +49,12 @@
 .dropdown-listbox {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtlest);
-  padding: var(--space-6);
+  padding: var(--space-4);
   border-radius: var(--radius-5);
 
   .dropdown-item {
     color: var(--text-neutral-default);
-    background: var(--bg-raised); // ensures unselected items are not colored
+    background: var(--bg-raised);
     box-shadow: var(--shadow-large);
     transition:
       transform 140ms ease,
@@ -94,6 +93,7 @@
 
     .react-aria-Text {
       margin-left: var(--space-9);
+      // @include typography.para-sm;
     }
   }
 }

@@ -68,7 +68,9 @@ export function DropdownItem(props: ListBoxItemProps) {
         <>
           {isSelected && <Check />}
           {typeof children === "string" ? (
-            <Text slot="label">{children}</Text>
+            <Text className="para-sm" slot="label">
+              {children}
+            </Text>
           ) : (
             children
           )}

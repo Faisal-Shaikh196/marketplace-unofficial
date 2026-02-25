@@ -87,8 +87,8 @@ export function Select<T extends object>({
         </Label>
       )}
 
-      <Button>
-        <SelectValue>
+      <Button style={{ width: "100%", justifyContent: "space-between" }}>
+        <SelectValue className="para-sm react-aria-SelectValue">
           {({ selectedText, isPlaceholder }) => {
             if (isPlaceholder) return placeholder ?? "Select";
             const icon = getSelectedIcon();

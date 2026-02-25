@@ -9,6 +9,7 @@ const components: ComponentMap = {
   DEV: lazy(() => import("../routes/Dev/Dev")),
   MANUFACTURER: lazy(() => import("../routes/Manufacturer/Manufacturer")),
   ADMIN: lazy(() => import("../routes/Admin/Admin")),
+  FORGOTPASSWORD: lazy(() => import("../routes/ForgotPassword/ForgotPassword")),
 };
 
 export class ComponentFactory {

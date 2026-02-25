@@ -5,6 +5,7 @@ export type RouteKey =
   | "HOME"
   | "LOGIN"
   | "REGISTER"
+  | "FORGOTPASSWORD"
   | "DASHBOARD"
   | "DEV"
   | "MANUFACTURER"
