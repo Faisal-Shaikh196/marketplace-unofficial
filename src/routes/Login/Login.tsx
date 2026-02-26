@@ -14,15 +14,29 @@ import { Link } from "@tanstack/react-router";
 import { themeContext } from "../../context/theme.context";
 import { useObservable } from "@legendapp/state/react";
 import { queue } from "../../components/ui/Toast/Toast";
+import { authContext } from "../../context/auth.store";
 
 export default function Login() {
   const { toggleTheme } = themeContext;
+  const { isLoggedIn, user } = authContext;
+
   const $state = useObservable({
     form: {
       username: "",
       password: "",
     },
   });
+
+  const handleSubmit = (formData: FormData) => {
+    isLoggedIn.toggle();
+    user.set({ name: formData.get("username") as string });
+    queue.add({
+      title: "Login Attempt",
+      description: `You have attempted to log in as ${formData.get(
+        "username"
+      )}. This is a demo, so no actual authentication is performed.`,
+    });
+  };
 
   // const nav = useNavigate();
   // const qc = useQueryClient();
@@ -94,18 +108,7 @@ export default function Login() {
                 Welcome Back! Please enter your details.
               </p>
             </div>
-            <Form
-              action={(formData) => {
-                console.table({
-                  username: formData.get("username"),
-                  password: formData.get("password"),
-                });
-                queue.add({
-                  title: "Login Attempt",
-                  description: "You have attempted to log in.",
-                });
-              }}
-            >
+            <Form action={handleSubmit}>
               <CustomInput
                 name="username"
                 label="Username"

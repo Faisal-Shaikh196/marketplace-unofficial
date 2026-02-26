@@ -17,7 +17,7 @@ export const themeContext = observable({
 });
 syncObservable(themeContext, {
   persist: {
-    name: "themeContext",
+    name: "theme-context",
     plugin: ObservablePersistLocalStorage,
   },
 });

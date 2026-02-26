@@ -1,6 +1,6 @@
 @use "../../../styles/typography.scss";
-@import "../../../styles/themes.scss";
-@import "../../../styles/utilities.scss";
+@use "../../../styles/themes.scss";
+@use "../../../styles/utilities.scss";
 
 .react-aria-Checkbox {
   --checkmark-color: var(--bg-primary-500);

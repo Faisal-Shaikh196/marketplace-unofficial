@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import {
   createRootRouteWithContext,
   createRoute,
@@ -16,22 +16,26 @@ import type {
 import { ComponentFactory } from "./ComponentFactory";
 import { ensureMe } from "../utils/auth";
 import { canAccess, type Role } from "../utils/rbac";
+import { authContext } from "../context/auth.store";
 // import { NavBar } from "../components/shared/NavBar";
+import { observe } from "@legendapp/state";
+import RootLayout from "../components/Layout/RootLayout/RootLayout";
+import AuthLayout from "../components/Layout/AuthLayout/AuthLayout";
 
 export type RouterContext = { queryClient: QueryClient };
 
+const { isLoggedIn } = authContext;
+
+console.log("isLoggedIn in RouteFactory:", isLoggedIn.get());
+
+observe(() => {
+  isLoggedIn.get();
+  console.log("isLoggedIn changed:", isLoggedIn.get());
+});
+
 export const RootRoute = createRootRouteWithContext<RouterContext>()({
   component: function Root() {
-    return (
-      <div style={{ fontFamily: "Inter, sans-serif" }}>
-        {/* <NavBar /> */}
-        <div style={{}}>
-          <React.Suspense fallback={<div>Loading...</div>}>
-            <Outlet />
-          </React.Suspense>
-        </div>
-      </div>
-    );
+    return <>{isLoggedIn.get() ? <RootLayout /> : <AuthLayout />}</>;
   },
 });
 
