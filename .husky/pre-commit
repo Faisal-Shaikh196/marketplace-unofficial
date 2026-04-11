@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+
+REPO_ROOT=$(git rev-parse --show-toplevel)
+cd "$REPO_ROOT/frontend"
+
+bun run typecheck
+bunx lint-staged
+
+
+# bash#!/usr/bin/env sh
+# Shebang line - tells the system to run this script using the sh shell (standard shell interpreter).
+
+# REPO_ROOT=$(git rev-parse --show-toplevel)
+# Finds the Git repository root directory and stores it in the REPO_ROOT variable.
+
+# git rev-parse --show-toplevel - Git command that outputs the absolute path to the root of your repository
+# For example, it returns: C:/projects/marketplace_starter
+# $(...) - captures the command output and assigns it to the variable
+
+
+# cd "$REPO_ROOT/frontend"
+# Changes directory to the frontend folder inside your repo.
+
+# Uses the REPO_ROOT variable we just set
+# The "$REPO_ROOT" quotes handle paths with spaces
+# So it becomes: cd C:/projects/marketplace_starter/frontend
